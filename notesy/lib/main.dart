@@ -16,6 +16,23 @@ class Notesy extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      theme: ThemeData.light().copyWith(
+        textSelectionTheme: TextSelectionThemeData(
+          cursorColor: Colors.deepPurple,
+        ),
+        inputDecorationTheme: InputDecorationTheme(
+          focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(8),
+              borderSide: BorderSide(color: Colors.deepPurple, width: 2)),
+          enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(8),
+              borderSide: BorderSide(color: Colors.black, width: 2)),
+          outlineBorder: BorderSide(color: Colors.deepPurple),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8),
+          ),
+        ),
+      ),
       title: 'Notesy',
       home: ResponsiveBuilder(builder: (context, sizingInformation) {
         DeviceDimensions.initializeDeviceDimenssions();
